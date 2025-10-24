@@ -1,0 +1,271 @@
+  </st<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎉 Happy Birthday Tristan 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 20px rgba(255,255,255,0.6);
+      animation: glow 2s infinite alternate;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      max-width: 80%;
+      line-height: 1.4em;
+      margin-top: 10px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.4);
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    button {
+      margin-top: 20px;
+      background: white;
+      color: #ff4081;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background: #ffe0ec;
+      transform: scale(1.1);
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #ff4081, 0 0 30px #ff80ab; }
+      to { text-shadow: 0 0 20px #fff, 0 0 40px #ff80ab, 0 0 60px #f50057; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday Tristan 🎉</h1>
+  <h2>May you have a healthy body and a longer life. Stay happy and blessed always!</h2>
+  <button onclick="playSong()">Play Song 🎵</button>
+  <canvas id="confetti"></canvas>
+
+  <audio id="song">
+    <source src="https://cdn.pixabay.com/audio/2021/10/18/audio_490ba0b1c0.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playSong() {
+      document.getElementById('song').play();
+      startConfetti();
+    }
+
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    let confetti = [];
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function randomColor() {
+      const colors = ['#ff4081','#ffeb3b','#4caf50','#2196f3','#ff5722'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function startConfetti() {
+      confetti = [];
+      for (let i = 0; i < 150; i++) {
+        confetti.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          r: Math.random() * 6 + 2,
+          d: Math.random() * 0.5 + 0.5,
+          color: randomColor()
+        });
+      }
+      animateConfetti();
+    }
+
+    function animateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < confetti.length; i++) {
+        const c = confetti[i];
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2, false);
+        ctx.fillStyle = c.color;
+        ctx.fill();
+        c.y += c.d * 4;
+        if (c.y > canvas.height) c.y = -10;
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+  </script>
+</body>
+</html>
+yle>
+</head>
+<body>
+  <h1>🎂 Happy Birthday Tristan 🎉</h1>
+  <h2>May you have a healthy body and a longer life. Stay happy and blessed always!</h2>
+  <button onclick="playSong()">Play Song 🎵</button>
+  <canvas id="confetti"></canvas>
+
+  <audio id="song">
+    <source src="https://cdn.pixabay.com/audio/2021/10/18/audio_490ba0b1c0.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playSong() {
+      document.getElementById('song').play();
+      startConfetti();
+    }
+
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    let confetti = [];
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function randomColor() {
+      const colors = ['#ff4081','#ffeb3b','#4caf50','#2196f3','#ff5722'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function startConfetti() {
+      confetti = [];
+      for (let i = 0; i < 150; i++) {
+        confetti.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          r: Math.random() * 6 + 2,
+          d: Math.random() * 0.5 + 0.5,
+          color: randomColor()
+        });
+      }
+      animateConfetti();
+    }
+
+    function animateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < confetti.length; i++) {
+        const c = confetti[i];
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2, false);
+        ctx.fillStyle = c.color;
+        ctx.fill();
+        c.y += c.d * 4;
+        if (c.y > canvas.height) c.y = -10;
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+  </script>
+</body>
+</html>
+Happy birthday Tristan    }
+
+        /* 4. Button effect: Slowly turning to black */
+        .form-group input[type="submit"]:hover,
+        .form-group input[type="submit"]:focus {
+            background-color: #000000; /* Black on touch/hover/focus */
+        }
+        
+        /* Original styles for alignment and spacing */
+        .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group select {
+            margin-bottom: 10px;
+        }
+
+        .form-group .gender-radio {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .form-group .gender-radio label {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .form-group .gender-radio input {
+            margin-right: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Student Registration Form</h2>
+        <form action="" method="POST">
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <div class="gender-radio">
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+
+            <div clas
